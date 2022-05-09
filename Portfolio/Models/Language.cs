@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace Portfolio.Models
+{
+    public class Language
+    {
+        [Key]
+        [Display(Name = "Id")]
+        public virtual int Id { get; set; }
+
+        [Display(Name = "Name")]
+        [StringLength(50, MinimumLength = 3)]
+        public virtual string Name { get; set; }
+
+        [Display(Name = "Persons")]
+        public virtual ICollection<PersonLanguage> PersonLanguages { get; set; }
+
+        public Language()
+        {
+            PersonLanguages = new List<PersonLanguage>();
+        }
+
+        public override string ToString()
+        {
+            return string.Format($"{Name} (#{Id:D4})");
+        }
+    }
+}
