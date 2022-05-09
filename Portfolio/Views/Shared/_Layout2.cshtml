@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link type="text/css" rel="stylesheet" href="~/Content/StyleSheet.css" />
+
+</head>
+<body>
+
+    <div>
+
+        <header id="header">
+            
+                Guess a number
+            <div id="menu">
+                <b>
+                    @Html.ActionLink("NewGame", "SetSession", new { area = "" }, new { Style = "text-decoration:none; color: orangered; " })
+                    
+                    
+
+
+                   
+                </b>
+            </div>
+            
+        </header>
+
+        <div id="body">
+            @RenderBody()
+        </div>
+
+        <footer id="footer">
+            <p>&copy; @DateTime.Now.Year - Axel</p>
+        </footer>
+    </div>
+</body>
+</html>

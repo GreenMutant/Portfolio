@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "SetSession";
+    ViewBag.Title = "SetSession";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Guessing Game</h1>
+
+    <form asp-action="SetSession" method=post>
+        <label>Guess a number: </label>
+        <input type="number" name="numericInput" />
+        <input type="submit" value="Set session" />
+    </form>
+
+    <p>@ViewBag.Message</p>
+
+
