@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+<section class="row">
+    <div class="col-sm-2 pb-3 border-end" style="min-width: 200px;">
+        <p>
+            Axel Frylén <br />
+            Hult Åsens Väg <br />
+            43645 Askim <br />
+            SWEDEN <br />
+            <a href="tel:+46732633082">+46732633082</a><br />
+            <a href="mailto:dummy@mail.com">axel-frylen-ui@protonmail.com</a>
+        </p>
+    </div>
+
+    <div class="col-sm-6 border-bottom pb-2">
+        <h3 class="pb-2">Contact me</h3>
+        <form asp-controller="Home" asp-action="Contact" method="post">
+            <div class="col-md-6 mb-1">
+                <input type="text" name="name" placeholder="Name" class="form-control">
+            </div>
+            <div class="col-md-6 mb-1">
+                <input type="text" name="email" placeholder="Email" class="form-control">
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-12">
+                    <input type="text" name="subject" placeholder="Subject" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-12">
+                    <textarea type="text" name="message" rows="10" placeholder="Message" class="form-control md-textarea"></textarea>
+                </div>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Send" />
+        </form>             
+    </div>
+
+</section>

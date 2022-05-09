@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "GetInfo";
+    ViewBag.Title = "GetInfo";
+
+}
+
+<h1>Check Fever</h1>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+
+
+    <form asp-controller="FeverCheck" asp-action="GetInfo" method="post">
+        <label>Temperatur:</label>
+        <input type="text" name="temp" />
+        <input type="submit" pattern="[0-9]+" value="Send Info" />
+    </form>
+}
+
