@@ -1,0 +1,32 @@
+﻿@using Portfolio.Models
+@model IEnumerable<City>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cities</h1>
+
+<a asp-action="City">City</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>City</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (City item in Model)
+        {
+            <tr>
+                <td>@item.CityId</td>
+                <td>@item.CityName</td>
+                <td>@item.CountryId</td>
+                
+                <td><a asp-action="Delete" asp-controller="CityDB" asp-route-cityId="@item.CityId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

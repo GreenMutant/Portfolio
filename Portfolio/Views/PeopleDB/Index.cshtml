@@ -1,0 +1,44 @@
+﻿@using Portfolio.Models
+@model Portfolio.Models.PeopleViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+
+
+<form method="get" action="/PeopleDB">
+    <label></label>
+    <input type="text" label="" name="searchString" />
+    <input type="submit" value="Search" />
+</form>
+
+<br />
+
+
+
+
+<form method="post" action="/PeopleDB">
+    <label></label>
+    <div asp-validation-summary=All class="text-danger"> </div>
+
+    <input name="NewName" type="text" placeholder="Name" />
+    <input name="NewCity" type="text" placeholder="City" />
+    <input name="NewPhone" type="text" placeholder="Phone number" />
+    <input type="submit" value="Add" />
+</form>
+
+<br />
+
+
+
+<br />
+<div class="row">
+    @foreach (var person in Model.peopleList)
+    {
+        @Html.Partial("_PeopleObjects", person)
+    }
+</div>
+
+
