@@ -1,0 +1,16 @@
+﻿@using Portfolio.Models
+@model Country
+@{
+    ViewData["Title"] = "Country";
+}
+
+<h1>AddCountry</h1>
+
+<form asp-action="Country" method="post">
+    <div class="form-group">
+        <input asp-for="CountryName"></input>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Add" />
+    </div>
+</form>
