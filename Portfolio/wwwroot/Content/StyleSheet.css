@@ -1,0 +1,53 @@
+﻿
+
+#header {
+    position: fixed;
+    font-family: "Oswald Bold", bold, sans-serif;
+    color: limegreen;
+    text-align: left;
+    font-size: 40px;
+    padding: 10px;
+    display: inline;
+    left: 5%;
+}
+
+#menu {
+    color: lawngreen;
+    display: inline;
+    margin-left: 20px;
+    word-spacing: 10px;
+    font-size: 15px;
+}
+
+#body > headline {
+    position: relative;
+    font-size: 40px;
+    color: steelblue;
+    padding-top: -40px;
+}
+
+
+#body {
+    position: fixed;
+    border-style: dashed;
+    border-width: thin;
+    border-color: orangered;
+    font-family: "Oswald Bold", bold, sans-serif;
+    color: darkolivegreen;
+    font-size: 15px;
+    padding-left: 40px;
+    padding-top: 80px;
+    top: 60px;
+    left: 5%;
+    height: 60%;
+    width: 50%;
+}
+
+    #footer {
+    position: fixed;
+    font-family: "Oswald Bold", bold, sans-serif;
+    color: steelblue;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
