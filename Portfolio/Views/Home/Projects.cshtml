@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Projects";
+}
+
+<headline><b>Projects</b></headline>
+
+<ul>
+    <li><h5>C#</h5></li>
+
+    <p>
+        <a href="https://github.com/GreenMutant/Kalkylator">Kalkylator</a>
+        Simple calculator for console
+    </p>
+    <p>
+        <a href="https://github.com/GreenMutant/HangMan">HangMan</a>
+        Classic HangMan Game for console
+    </p>
+    <p>
+        <a href="https://github.com/GreenMutant/VendingMachine">VendingMachine</a>
+        Vending Machine console model
+    </p>
+    <li><h5>FrontEnd</h5></li>
+
+    <p>
+        <a href="https://github.com/GreenMutant/HtmlCSS">HtmlCSS</a>
+        Travel site example made with Html and Style Sheets
+    </p>
+    <p>
+        <a href="https://github.com/GreenMutant/Sokoban">Sokoban</a>
+        JavaScript graphical game. Control the player and put the boxes in right places
+    </p>
+
+    <li><h5>BackEnd</h5></li>
+
+    <p>
+        @Html.ActionLink("FeverCheck", "GetInfo", "FeverCheck", new { area = "" }, new { Style = "text-decoration:none; color: orangered;" })
+        MVC-based check fever temperature
+    </p>
+    <p>
+        @Html.ActionLink("GuessingGame", "SetSession", "GuessingGame", new { area = "" }, new { Style = "text-decoration:none; color: orangered;" })
+        Session-based guessing game
+    </p>
+    <p>
+        @Html.ActionLink("Person", "Person", "Person", new { area = "" }, new { Style = "text-decoration:none; color: orangered;" })
+        Model View - Send data to View
+    </p>
+    <p>
+        @Html.ActionLink("1.ModelView", "Index", "People", new { area = "" }, new { Style = "text-decoration:none; color: orangered;" })
+        &nbsp;
+        @Html.ActionLink("2.PartialView", "Index2", "People", new { area = "" }, new { Style = "text-decoration:none; color: orangered;" })
+        &nbsp;
+        @Html.ActionLink("3.Ajax", "Index", "Ajax", new { area = "" }, new { Style = "text-decoration:none; color: orangered;" })
+    </p>
+    <p>
+        @Html.ActionLink("1.Database", "Index", "PeopleDB", new { area = "" }, new { Style = "text-decoration:none; color: orangered;" })
+        &nbsp;
+        @Html.ActionLink("2.Database", "Index", "People2", new { area = "" }, new { Style = "text-decoration:none; color: orangered;" })
+        &nbsp;
+        @Html.ActionLink("3.Database", "Index", "Ajax", new { area = "" }, new { Style = "text-decoration:none; color: orangered;" })
+    </p>
+
+</ul>

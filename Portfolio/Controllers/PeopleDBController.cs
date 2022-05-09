@@ -1,0 +1,103 @@
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using System.Threading.Tasks;
+using Portfolio.Models;
+using Portfolio.Data;
+
+namespace Portfolio.Controllers
+{
+    public class PeopleDBController : Controller
+    {
+        
+
+        private readonly ApplicationDbContext _context;
+
+        public PeopleDBController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+
+        public IActionResult Index(string searchString)
+        {
+            List<Person> persons = new List<Person>();
+            PeopleViewModel viewPeople = new PeopleViewModel();
+            CreatePersonViewModel newPerson = new CreatePersonViewModel();
+
+            viewPeople.peopleList = _context.People.ToList();
+
+
+
+
+            if (searchString != null)
+            {
+                persons = PeopleList._list.Where(p => p.Name.ToLower().Contains(searchString) || p.City.ToLower().Contains(searchString) || p.PhoneNumber.ToLower().Contains(searchString)).ToList();
+
+                viewPeople.peopleList = persons;
+                viewPeople.person = newPerson;
+
+                return View(viewPeople);
+            }
+
+
+            return View(viewPeople);
+        }
+        [HttpPost]
+        public IActionResult Index(CreatePersonViewModel person)
+        {
+            PeopleViewModel viewModel = new PeopleViewModel();
+            CreatePersonViewModel newPerson = new CreatePersonViewModel();
+
+            int newId = _context.People.Count() + 1;
+
+            if (ModelState.IsValid)
+            {
+
+                Person personView = new Person()
+                {
+
+                    Name = person.NewName,
+                    City = person.NewCity,
+                    PhoneNumber = person.NewPhone,
+                    Id = newId,
+                };
+
+                _context.People.Add(personView);
+                _context.SaveChanges();
+
+                viewModel.person = person;
+                viewModel.peopleList = _context.People.ToList();
+
+                return View(viewModel);
+
+            }
+
+            viewModel.peopleList = PeopleList._list;
+            viewModel.person = person;
+
+            return View(viewModel);
+        }
+
+        public IActionResult DeletePerson(string id)
+        {
+            List<Person> persons = new List<Person>();
+            PeopleViewModel viewPeople = new PeopleViewModel();
+            CreatePersonViewModel newPerson = new CreatePersonViewModel();
+
+            viewPeople.peopleList = _context.People.ToList();
+
+            int number = int.Parse(id);
+
+            Person PersonToDelete = _context.People.FirstOrDefault(x => x.Id == number);
+
+            _context.People.Remove(PersonToDelete);
+            _context.SaveChanges();
+            viewPeople.peopleList = _context.People.ToList();
+
+
+            return View("Index", viewPeople);
+        }
+    }
+}
