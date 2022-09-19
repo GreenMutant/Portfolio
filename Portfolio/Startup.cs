@@ -80,12 +80,7 @@ namespace Portfolio
 
                    defaults: new { controller = "People", action = "Index" }
                    );
-                endpoints.MapControllerRoute(
-                  name: "peopledb",
-                  pattern: "PeopleDB",
-
-                  defaults: new { controller = "PeopleDB", action = "Index" }
-                  );
+               
             });
 
             
