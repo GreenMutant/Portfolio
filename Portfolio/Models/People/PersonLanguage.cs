@@ -12,7 +12,7 @@ namespace Portfolio.Models
         public int Id { get; set; }
         [Required]
         public Person Person { get; set; }
-        [Key]
+        [Required]
         public int LanguageId { get; set; }
         [Required]
         public Language Language { get; set; }
