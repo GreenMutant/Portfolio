@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Portfolio.Controllers
 {
-    public class CityController : Controller
+    public class CityDBController : Controller
     {
         private readonly ApplicationDbContext _context;
         public CityController(ApplicationDbContext config)
