@@ -7,10 +7,10 @@ using System.Linq;
 
 namespace Portfolio.Controllers
 {
-    public class CountryController : Controller
+    public class CountryDBController : Controller
     {
         private readonly ApplicationDbContext _context;
-        public CountryController(ApplicationDbContext config)
+        public CountryDBController(ApplicationDbContext config)
         {
             _context = config;
         }
