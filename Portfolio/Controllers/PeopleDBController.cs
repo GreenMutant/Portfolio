@@ -34,7 +34,7 @@ namespace Portfolio.Controllers
 
             if (searchString != null)
             {
-                persons = PeopleList._list.Where(p => p.Name.ToLower().Contains(searchString) || p.City.CityName.ToLower().Contains(searchString) || p.PhoneNumber.ToLower().Contains(searchString)).ToList();
+                persons = PeopleList._list.Where(p => p.Name.Contains(searchString) || p.City.CityName.Contains(searchString) || p.PhoneNumber.Contains(searchString)).ToList();
 
                 viewPeople.peopleList = persons;
                 viewPeople.person = newPerson;
