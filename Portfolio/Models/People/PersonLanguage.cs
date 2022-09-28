@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Portfolio.Models
 {
@@ -12,7 +13,7 @@ namespace Portfolio.Models
         public int Id { get; set; }
         [Required]
         public Person Person { get; set; }
-        [Required]
+        [ForeignKey("Language")]
         public int LanguageId { get; set; }
         [Required]
         public Language Language { get; set; }

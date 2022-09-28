@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Portfolio.Models
 {
@@ -9,7 +10,7 @@ namespace Portfolio.Models
         public int CityId { get; set; }
         [Required]
         public string CityName { get; set; }
-        [Required]
+        [ForeignKey("Country")]
         public int CountryId { get; set; }
 
         [Required]
